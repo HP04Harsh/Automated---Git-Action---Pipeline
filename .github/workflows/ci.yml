@@ -11,11 +11,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
-
       - name: Build and run docker container
         run: |
           docker build -t gondia-info .
@@ -25,4 +20,4 @@ jobs:
         run: |
           sleep 10
           curl -I http://localhost | grep "200 OK"
-          echo "Test passed: Application is running and accessible."
+          echo "Test passed: Application is running."
