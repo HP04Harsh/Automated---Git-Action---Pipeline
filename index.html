@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gondia - The City of Lakes & Culture</title>
+<style>
+  /* Basic Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* Header Section */
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 2s ease forwards;
+    opacity: 0;
+  }
+
+  header p {
+    font-size: 1.5rem;
+    animation: fadeInUp 2s 1s ease forwards;
+    opacity: 0;
+  }
+
+  /* Waves Animation */
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 20%;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    animation: waveMove 6s linear infinite;
+  }
+
+  .wave:nth-child(2) {
+    bottom: 10px;
+    animation-duration: 8s;
+    opacity: 0.4;
+  }
+
+  @keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Section Styling */
+  section {
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  section h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #fff;
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Animated Icons */
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 30px;
+    width: 250px;
+    transition: transform 0.5s, background 0.5s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255,255,255,0.2);
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 50px 20px;
+    background: rgba(0,0,0,0.2);
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* Floating animation for cards */
+  .card {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Gondia</h1>
+  <p>The City of Lakes, Culture & Nature</p>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</header>
+
+<section>
+  <h2>About Gondia</h2>
+  <p>Gondia is a beautiful city in Maharashtra known for its lush greenery, rivers, and rich cultural heritage. Explore its hidden gems, enjoy the local cuisine, and experience the warmth of its people.</p>
+</section>
+
+<section>
+  <h2>Highlights</h2>
+  <div class="info">
+    <div class="card">
+      <h3>Lakes & Rivers</h3>
+      <p>Experience the serene beauty of local lakes and rivers, perfect for relaxation and nature walks.</p>
+    </div>
+    <div class="card">
+      <h3>Culture & Festivals</h3>
+      <p>Gondia celebrates a rich tapestry of traditions, music, and festivals throughout the year.</p>
+    </div>
+    <div class="card">
+      <h3>Local Cuisine</h3>
+      <p>Savor authentic flavors of Maharashtra with special local dishes unique to Gondia.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Visit Gondia</h2>
+  <p>Plan your trip and explore the natural beauty, local markets, and cultural landmarks of Gondia. Adventure and tranquility await you!</p>
+</section>
+
+<footer>
+  &copy; 2026 Gondia Tourism | Designed with ❤️ using HTML & CSS
+</footer>
+
+</body>
+</html>

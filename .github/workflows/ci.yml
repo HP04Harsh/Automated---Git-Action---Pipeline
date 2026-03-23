@@ -1,0 +1,28 @@
+name: Gondia-Info
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+
+      - name: Build and run docker container
+        run: |
+          docker build -t gondia-info .
+          docker run -d -p 80:80 gondia-info
+
+      - name: Test the application
+        run: |
+          sleep 10
+          curl -I http://localhost | grep "200 OK"
+          echo "Test passed: Application is running and accessible."
