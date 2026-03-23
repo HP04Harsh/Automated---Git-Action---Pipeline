@@ -1,23 +1,19 @@
-name: Gondia-Info
+name: Deploy Gondia Site to GitHub Pages
+
 on:
   push:
     branches:
-      - main
+      - main  # or master, whatever your default branch is
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build and run docker container
-        run: |
-          docker build -t gondia-info .
-          docker run -d -p 80:80 gondia-info
-
-      - name: Test the application
-        run: |
-          sleep 10
-          curl -I http://localhost | grep "200 OK"
-          echo "Test passed: Application is running."
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./   # Root directory containing index.html
